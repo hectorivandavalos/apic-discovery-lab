@@ -6,7 +6,6 @@ env:
   API_HOST: mexico-april-420eb34f056ae68f3969289d61f61851-0000.us-south.containers.appdomain.cloud
   PROVIDER_ORG:  tech-jam-student16
   PLATFORM_API_PREFIX: api-manage-e8a163cd-platform-api-tech-jam-apic
-  git_diff: ${{ steps.difference-output.outputs.action_updates }}
   INSECURE_SKIP_TLS_VERIFY: true
   API_FILES: APIfolder/photos.yaml
   #API_FILES: APIfolder/uber-api.json
@@ -33,6 +32,7 @@ jobs:
         api_folders: ${{ env.API_FOLDERS }}
         resync_check: ${{ true }}
         git_diff: ${{ steps.difference-output.outputs.action_updates }}
+        insecure_skip_tls_verify: ${{ env.INSECURE_SKIP_TLS_VERIFY }}
     - name: Display the action-result
       run: |
         echo "Result of the action: ${{ steps.discover-apis.outputs.action-result }}"
