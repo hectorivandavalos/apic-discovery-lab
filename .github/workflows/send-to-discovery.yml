@@ -3,8 +3,11 @@ name: Send Discovered API to ApiConnect
 on: [pull_request, workflow_dispatch, push]
 
 env:
-  API_HOST: REPLACE
-  PROVIDER_ORG: REPLACE
+  API_HOST: mexico-april-420eb34f056ae68f3969289d61f61851-0000.us-south.containers.appdomain.cloud
+  PROVIDER_ORG:  tech-jam-student16
+  PLATFORM_API_PREFIX: api-manage-e8a163cd-platform-api-tech-jam-apic
+  git_diff: ${{ steps.difference-output.outputs.action_updates }}
+  INSECURE_SKIP_TLS_VERIFY: true
   API_FILES: APIfolder/photos.yaml
   #API_FILES: APIfolder/uber-api.json
   #API_FILES: APIfolder/coffee-store.yaml
